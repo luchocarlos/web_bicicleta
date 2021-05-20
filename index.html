@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Estructura de Maquetación Básica</title>
+        <link rel="stylesheet" href="./css/estilos.css">
+    </head>
+    <body>
+
+        <div id="contenedor">
+        <header>
+            <h1>LA BICICLETA</h1>
+        </header>
+        
+        <br>  
+                        
+        <nav id="menu_gral">
+            <ul>
+              <li><a href="#">Historia</a>
+                  <ul>
+                      <li><a href="#historia">Historia</a></li>
+                      <li><a href="https://www.werbikes.mx/blogs/werbikes-blog/la-historia-de-la-bicicleta/#:~:text=A%20Karl%20Freiherr%20von%20Drais,invenci%C3%B3n%20de%20este%20ciudadano%20alem%C3%A1n.&text=A%20fin%20de%20perfeccionar%20la,justo%20en%20la%20rueda%20delantera."  target="_blank" >Más Historia</a></li>
+                      
+                  </ul>
+              </li>
+              <li><a href="#">TIPO DE CICLAS</a>
+                  <ul>
+                      <li><a href="#tipo">Tipos</a></li>
+                      <li><a href="https://www.bikeexchange.com.co/blog/eligiendo-la-bicicleta-correcta"   target="_blank">Más Tipos</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Deportes</a>
+                  <ul>
+                      <li><a href="#competencia">Competencias</a></li>
+                      <li><a href="https://encolombia.com/vida-estilo/deportes/ciclismo/"  target="_blank">Más Competencias</a></li>
+                      
+                  </ul>
+              </li>
+            </ul>
+          </nav>
+            
+        
+        
+        <section id="contenido">
+            <article>
+                <a name="historia"></a>
+                <h2><p>HISTORIA</p><br>
+                    <section id="bike01"></section>
+                    <p class="hist">A Karl Freiherr von Drais se le atribuye la creación de la bicicleta. Y fue en 1817 cuando el mundo vio por primera vez una bici gracias a la invención de este ciudadano alemán. Pero este primer ejemplar era de madera y, de cuerdo a los registros históricos, no se le parecía en nada a lo que es actualmente. 
+                    Esta máquina, a la que se le llamó también la Draisiana no tenía pedales. Quien quisiera echarse a andar sobre ella tenía que impulsarse con ayuda de los pies desde el suelo. <br>
+                    
+                </p> <br>
+                <a name="tipo"></a>
+                <p>TIPOS DE BICICLETAS</p><br> 
+                    <section id="tipo_bike"></section>
+                    <p class="tipos">Bicicletas para Niños, Bicicletas Eléctricas o Pedelec,
+                    Bicicletas Clásicas y Vintage, Bicicletas de Paseo, Las "Fixies" o Bicicletas de una Velocidad,
+                    Bicicletas de Turismo, Bicicletas de BMX, Bicicletas Plegables, Bicicletas Híbridas,
+                    Bicicletas Urbanas, Bicicletas de Gravilla o Gravel, Bicicletas de Cyclocross,
+                    Bicicletas de Ciclomontañismo o MTB, Bicicletas para Ruta de Barra Plana, 
+                    Bicicletas de Triatlón, Bicicletas Contrarreloj y Bicicletas de Ruta.              
+                
+                </p> <br> 
+                <a name="competencia"></a>
+                <p>DEPORTES</p><br>
+                <section id="dep_bike"></section>
+                   <p class="comp">
+                    Ciclismo en Ruta, Ciclismo BMX, Ciclismo de Montaña,<br>
+                    Ciclismo en Pista, Ciclismo en Triatlón y Contrarreloj.                    
+                </p><br>
+                </h2>
+            </article>
+        </section>
+            
+        <aside>
+           <h4><p>TIENDA</p><br>
+           <p class="tien"> Dirección: <br>Cra. 27a Bis ## 61 C 06; Bogotá.<br>
+             Horario Atencion: <br>
+             LUNES A VIERNES DE 8:00 A 22:00<br>
+             Teléfono: <br>311 2891253<br><br><br>
+             <img src="./imag/lagu.jpg" WIDTH=272 HEIGHT=150>
+           </p> <br></h4> 
+                    
+                    
+                    
+           <div class="container_registro">
+              
+              <h5>Registarse</h5><br>
+                <form id="form" >
+                    Nombre Completo: <input type="text"  id="nombre" placeholder="Nombre y Apellido"  required/>   
+                    Telefono: <input type="number" id="telefono" placeholder="Ejem. 123456789"   required/>
+                    Correo: <input type="email" id="correo" placeholder="Ejem. bici@bici.com"  required/>
+                    Marca de su bicicleta: <input type="text" id="marca" placeholder="Ejem. gw"  required/>
+                    Tipo: <input type="text" id="tipo" placeholder="Ejem. ruta"  required/>
+                    Dias que practica: <input type="text" id="d_practica" placeholder="Ejem. 1 dia o más"  required/>
+                    <br>
+                    <br>
+                <button id="btn" value="btn" >Registarse</button> 
+            </form>
+            </div>
+        </aside>
+            
+        <footer>
+         <h3>&copy; 2021 Blog Bicicletas by Luis Carlos Pulido Martinez</h3>  
+        </footer>
+            
+        </div>
+      <script src="./mensaje.js" ></script>
+    </body>
+    <script>
+        const datos = [{
+
+            img: url='https://cdn.shoplightspeed.com/shops/620181/files/16186820/blog-post-history-bike-1.jpg',
+            desc:'',
+        }]
+        
+        let proyectos = document.querySelector('#bike01');
+        proyectos.style.background = '';   
+    
+        function dinamico(src,desc){
+            let div = document.createElement("div");
+            let img = document.createElement("img");
+            img.src = src;
+            let p = document.createElement("p");
+            p.innerHTML = desc;
+            div.appendChild(img);
+            div.appendChild(p);
+            proyectos.appendChild(div);
+        }
+
+        datos.forEach(({img,desc}) => dinamico(img,desc));
+    
+    
+        const datos_2 = [{
+
+            img: url='https://image.freepik.com/vector-gratis/conjunto-objetos-estilo-tipos-bicicletas_281368-98.jpg',
+            desc:''
+        }]
+        
+        let proyectos_2 = document.querySelector('#tipo_bike');
+        proyectos_2.style.background = '';   
+    
+        function dinamico_2(src,desc){
+            let div = document.createElement("div");
+            let img = document.createElement("img");
+            img.src = src;
+            let p = document.createElement("p");
+            p.innerHTML = desc;
+            div.appendChild(img);
+            div.appendChild(p);
+            proyectos_2.appendChild(div);
+        }
+
+        datos_2.forEach(({img,desc}) => dinamico_2(img,desc));    
+
+        const datos_3 = [{
+            img: url='https://i1.wp.com/www.federacioncolombianadeciclismo.com/wp-content/uploads/2020/03/ciclismocollage.jpg?w=1200',
+            desc:''
+        }]
+
+        let proyectos_3 = document.querySelector('#dep_bike');
+        proyectos_3.style.background = '';   
+
+        function dinamico_3(src,desc){
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = src;
+        let p = document.createElement("p");
+        p.innerHTML = desc;
+        div.appendChild(img);
+        div.appendChild(p);
+        proyectos_3.appendChild(div);
+        }
+
+        datos_3.forEach(({img,desc}) => dinamico_3(img,desc));
+    
+    </script> 
+</html>
